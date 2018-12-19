@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,700');
+
+a {
+	text-decoration: none;
+	transition     : all 0.3s ease-out;
+}
+
+img {
+	display: block;
+}
+
+* {
+	font-family: 'Roboto', sans-serif;
+	font-size  : 1em;
+	margin     : 0px;
+	padding    : 0px;
+	box-sizing : border-box;
+	outline    : none;
+}
+
+table {
+	width          : 100%;
+	border-collapse: collapse;
+	text-align     : center;
+}
+
+	table > thead {
+		background-color: rgb(8, 46, 61);
+	}
+
+		table > thead > tr > td {
+			color         : rgb(255, 255, 255);
+			padding       : 16px;
+			font-weight   : 100;
+			text-transform: uppercase;
+			font-size     : 0.85em;
+			letter-spacing: 1px;
+		}
+
+	table > tbody > tr {
+		background-color: rgb(255, 255, 255);
+	}
+
+	table > tbody > tr:nth-child(even) {
+		background-color: rgb(230, 230, 230);
+	}
+
+		table > tbody > tr > td {
+			color      : rgb(0, 0, 0);
+			padding    : 16px;
+			font-weight: 300;
+		}
+
+			table > tbody > tr > td > img {
+				width        : 60px;
+				margin       : auto;
+				border-radius: 50%;
+			}
+
+			table > tbody > tr > td > a {
+				display         : inline-block;
+				padding         : 6px 12px;
+				background-color: rgb(88, 197, 241);
+				color           : rgb(255, 255, 255);
+				font-size       : 0.75em;
+				font-weight     : 100;
+				text-transform  : uppercase;
+			}
+
+			table > tbody > tr > td > a:hover {
+				background-color: rgb(8, 46, 61);
+			}
+
+form {
+	width: 100%;
+}
+
+	form > div {
+		width  : 100%;
+		padding: 8px 16px;
+	}
+
+	form > div:first-of-type {
+		padding: 16px 16px 8px 16px;
+	}
+
+	form > div:last-of-type {
+		padding: 8px 16px 16px 16px;
+	}
+
+		form > div > label {
+			display       : block;
+			font-size     : 0.85em;
+			font-weight   : 300;
+			text-transform: uppercase;
+		}
+
+		form > div > input {
+			width           : 100%;
+			border          : none;
+			padding         : 6px;
+			font-weight     : 300;
+			background-color: rgb(220, 220, 220);
+		}
+
+		form > div > textarea {
+			width           : 100%;
+			border          : none;
+			padding         : 6px;
+			font-weight     : 300;
+			background-color: rgb(220, 220, 220);
+		}
+
+		form > div > select {
+			width           : 100%;
+			border          : none;
+			padding         : 6px;
+			font-weight     : 300;
+			background-color: rgb(220, 220, 220);
+		}
+
+			form > div > select > option {
+				transition: all 0.3s ease-out;
+			}
+
+		form > div > button {
+			font-weight     : 100;
+			font-size       : 0.85em;
+			padding         : 8px 16px;
+			border          : none;
+			background-color: rgb(88, 197, 241);
+			text-transform  : uppercase;
+			color           : rgb(255, 255, 255);
+			cursor          : pointer;
+			transition      : all 0.3s ease-out;
+		}
+
+		form > div > button:hover {
+			background-color: rgb(8, 46, 61);
+		}
+
+		form > div > div {
+			width           : 100%;
+			background-color: rgb(234, 0, 0);
+			color           : rgb(255, 255, 255);
+			font-weight     : 100;
+			font-size       : 0.75em;
+			padding         : 6px;
+		}
+
+body {
+	background-color: rgb(220, 220, 220);
+}
+
+	body > nav {
+		width           : 100%;
+		height          : 75px;
+		background-color: rgb(8, 46, 61);
+		position        : fixed;
+		top             : 0px;
+		left            : 0px;
+		z-index         : 40;
+		display         : flex;
+		align-items     : center;
+		justify-content : flex-end;
+	}
+
+		body > nav > div {
+			margin-right   : 32px;
+			display        : flex;
+			align-items    : center;
+			justify-content: center;
+		}
+
+			body > nav > div > a {
+				display        : flex;
+				align-items    : center;
+				justify-content: center;
+				color          : rgb(88, 197, 241);
+				margin-right   : 24px;
+				transition     : all 0.3s ease-out;
+			}
+
+			body > nav > div > a:hover {
+				color: rgb(255, 255, 255);
+			}
+
+			body > nav > div > a:last-of-type {
+				margin-right: 0px;
+			}
+
+				body > nav > div > a > img {
+					width        : 30px;
+					border-radius: 50%;
+					margin-right : 6px;
+				}
+
+	body > aside {
+		width           : 20%;
+		height          : 100vh;
+		background-color: rgb(88, 197, 241);
+		position        : fixed;
+		top             : 0px;
+		left            : 0px;
+		z-index         : 50;
+		display         : flex;
+		align-items     : center;
+		flex-direction  : column;
+	}
+
+		body > aside > div {
+			width          : 50%;
+			margin         : 60px 0px;
+			display        : flex;
+			align-items    : center;
+			justify-content: center;
+		}
+
+			body > aside > div > img {
+				height: 3em;
+				width : auto;
+			}
+
+			body > aside > div > h1 {
+				margin-left   : 12px;
+				font-weight   : 100;
+				text-transform: uppercase;
+				font-size     : 2em;
+				letter-spacing: 2px;
+			}
+
+		body > aside > ul {
+			width: 100%;
+		}
+
+			body > aside > ul > li {
+				display      : block;
+				width        : 100%;
+				margin-bottom: 6px;
+				padding      : 0px 6px;
+			}
+
+				body > aside > ul > li > a {
+					width           : 100%;
+					padding         : 12px;
+					background-color: rgb(16, 97, 130);
+					color           : rgb(8, 46, 61);
+					font-weight     : 300;
+					display         : flex;
+					align-items     : center;
+					justify-content : flex-start;
+				}
+
+				body > aside > ul > li > a:hover {
+					background-color: rgb(8, 46, 61);
+					color           : rgb(255, 255, 255);
+				}
+
+				body > aside > ul > li > .active {
+					background-color: rgb(8, 46, 61);
+					color           : rgb(255, 255, 255);
+				}
+
+					body > aside > ul > li > a > span {
+						margin-right: 12px;
+						font-size   : 0.75em;
+					}
+
+				body > aside > ul > li > ul {
+					display: none;
+				}
+
+				body > aside > ul > li > .show {
+					display: block;
+				}
+
+					body > aside > ul > li > ul > li {
+						display      : block;
+						width        : 100%;
+						margin-bottom: 6px;
+					}
+
+					body > aside > ul > li > ul > li:first-of-type {
+						margin-top: 6px;
+					}
+
+						body > aside > ul > li > ul > li > a {
+							width           : 100%;
+							padding         : 12px;
+							background-color: rgb(255, 255, 255);
+							color           : rgb(17, 17, 17);
+							font-weight     : 300;
+							display         : flex;
+							align-items     : center;
+							justify-content : flex-start;
+						}
+
+						body > aside > ul > li > ul > li > a:hover {
+							background-color: rgb(140, 140, 140);
+						}
+
+						body > aside > ul > li > ul > li > .active {
+							background-color: rgb(140, 140, 140);
+							cursor          : default;
+						}
+
+							body > aside > ul > li > ul > li > a > span {
+								margin-right: 12px;
+								font-size   : 0.75em;
+							}
+
+	body > section {
+		width   : 80%;
+		position: absolute;
+		right   : 0px;
+		top     : 75px;
+		padding : 32px;
+	}
+
+#index {
+	width: 100%;
+}
+
+	#index > ul {
+		width          : 100%;
+		display        : flex;
+		flex-flow      : row wrap;
+		justify-content: space-between;
+		list-style     : none;
+	}
+
+		#index > ul > li {
+			width           : 24%;
+			background-color: rgb(255, 255, 255);
+			padding         : 16px;
+		}
+
+			#index > ul > li > span {
+				display    : block;
+				width      : 100%;
+				font-weight: 100;
+				font-size  : 0.85em;
+			}
+
+			#index > ul > li > span:last-of-type {
+				text-align: center;
+				font-size : 3em;
+				margin-top: 12px;
+			}
+
+	#index > div {
+		width     : 100%;
+		margin-top: 32px;
+		background-color: rgb(255, 255, 255);
+	}
+
+		#index > div > h1,
+		#index > div > h2,
+		#index > div > h3,
+		#index > div > h4,
+		#index > div > h5,
+		#index > div > h6 {
+			font-size     : 1.25em;
+			text-transform: uppercase;
+			font-weight   : 100;
+			padding       : 32px;
+			border-bottom : 1px solid rgb(220, 220, 220);
+			position      : relative;
+		}
+
+.forms {
+	width: 100%;
+}
+
+	.forms > nav {
+		width        : 100%;
+		margin-bottom: 32px;
+	}
+
+		.forms > nav > ul {
+			list-style : none;
+			display    : flex;
+			align-items: center;
+		}
+
+			.forms > nav > ul > li {
+				margin-right: 8px;
+				font-size   : 0.85em;
+				font-weight : 100;
+			}
+
+			.forms > nav > ul > li:last-of-type {
+				margin-right: 0px;
+			}
+
+				.forms > nav > ul > li > a {
+					color: rgb(88, 197, 241);
+				}
+
+				.forms > nav > ul > li > a:hover {
+					color: rgb(0, 0, 0);
+				}
+
+	.forms > div {
+		width           : 100%;
+		background-color: rgb(255, 255, 255);
+	}
+
+		.forms > div > h1,
+		.forms > div > h2,
+		.forms > div > h3,
+		.forms > div > h4,
+		.forms > div > h5,
+		.forms > div > h6 {
+			font-size     : 1.25em;
+			text-transform: uppercase;
+			font-weight   : 100;
+			padding       : 32px;
+			border-bottom : 1px solid rgb(220, 220, 220);
+			position      : relative;
+			display       : flex;
+			align-items   : center;
+		}
+
+			.forms > div > h1 > a,
+			.forms > div > h2 > a,
+			.forms > div > h3 > a,
+			.forms > div > h4 > a,
+			.forms > div > h5 > a,
+			.forms > div > h6 > a {
+				font-size       : 0.65em;
+				background-color: rgb(88, 197, 241);
+				color           : rgb(255, 255, 255);
+				padding         : 8px 16px;
+				position        : absolute;
+				right           : 32px;
+			}
+
+			.forms > div > h1 > a:hover,
+			.forms > div > h2 > a:hover,
+			.forms > div > h3 > a:hover,
+			.forms > div > h4 > a:hover,
+			.forms > div > h5 > a:hover,
+			.forms > div > h6 > a:hover {
+				background-color: rgb(8, 46, 61);
+			}

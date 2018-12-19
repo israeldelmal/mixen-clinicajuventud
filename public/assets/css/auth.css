@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,700');
+
+a {
+	text-decoration: none;
+}
+
+* {
+	font-family: 'Roboto', sans-serif;
+	font-size  : 1em;
+	margin     : 0px;
+	padding    : 0px;
+	box-sizing : border-box;
+	outline    : none;
+}
+
+body {
+	width           : 100%;
+	height          : 100vh;
+	display         : flex;
+	align-items     : center;
+	justify-content : center;
+	background-color: rgb(220, 220, 220);
+}
+
+	body > div {
+		width: 35%;
+	}
+
+		body > div > nav {
+			width          : 100%;
+			display        : flex;
+			align-items    : center;
+			justify-content: center;
+			margin-bottom  : 24px;
+		}
+
+			body > div > nav > a {
+				display       : inline-block;
+				margin-right  : 16px;
+				text-transform: uppercase;
+				font-weight   : 300;
+				text-align    : center;
+				font-size     : 0.85em;
+				color         : rgb(110, 110, 110);
+				transition    : all 0.3s ease-out;
+			}
+
+			body > div > nav > a:hover {
+				font-weight: 700;
+			}
+
+			body > div > nav > a:last-of-type {
+				margin-right: 0px;
+			}
+
+			body > div > nav > .active {
+				font-weight: 700;
+				cursor     : default;
+			}
+
+		body > div > form {
+			display         : none;
+			padding         : 16px;
+			background-color: rgb(255, 255, 255);
+			border          : 1px solid rgb(110, 110, 110);
+		}
+
+		body > div > form:first-of-type {
+			display: block;
+		}
+
+			body > div > form > div {
+				width        : 100%;
+				margin-bottom: 16px;
+			}
+
+			body > div > form > div:last-of-type {
+				margin-bottom: 0px;
+			}
+
+				body > div > form > div > label {
+					width         : 100%;
+					display       : block;
+					text-transform: uppercase;
+					font-weight   : 700;
+					font-size     : 0.75em;
+					margin-bottom : 4px;
+					color         : rgb(110, 110, 110);
+				}
+
+				body > div > form > div > input {
+					width           : 100%;
+					border          : 1px solid rgb(110, 110, 110);
+					background-color: rgb(220, 220, 220);
+					padding         : 8px;
+					font-weight     : 300;
+					color           : rgb(110, 110, 110);
+				}
+
+				body > div > form > div > input::placeholder {
+					font-weight: 300;
+					color      : rgb(110, 110, 110);
+				}
+
+				body > div > form > div > button {
+					cursor          : pointer;
+					padding         : 10px 20px;
+					background-color: rgb(110, 110, 110);
+					color           : rgb(255, 255, 255);
+					border          : none;
+					font-weight     : 700;
+					font-size       : 0.75em;
+					text-transform  : uppercase;
+					transition      : all 0.3s ease-out;
+				}
+
+				body > div > form > div > button:hover {
+					background-color: rgb(32, 32, 32);
+				}
+
+				body > div > form > div > div {
+					width      : 100%;
+					margin-top : 2px;
+					border     : 1px solid rgb(234, 0, 0);
+					color      : rgb(234, 0, 0);
+					padding    : 4px;
+					font-weight: 300;
+					font-size  : 0.75em;
+					display    : none;
+				}
+
+				body > div > form > figure {
+					display: none;
+					width  : 100%;
+				}
+
+					body > div > form > figure > img {
+						display: block;
+						width  : 40px;
+						margin : auto;
+					}

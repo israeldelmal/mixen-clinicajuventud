@@ -1,0 +1,86 @@
+<?php
+// Web
+Route::get('/', 'WebController@index')->name('/');
+Route::get('/servicios/{slug}', 'WebController@service');
+Route::get('/paquetes/{slug}', 'WebController@pack');
+Route::get('/noticias', 'WebController@news');
+Route::get('/noticias/{slug}', 'WebController@news_show');
+Route::post('/contacto', 'WebController@contact');
+// Autenticación
+Route::prefix('autenticacion')->group(function() {
+	Route::get('/', 'AuthController@index')->name('autenticacion');
+	Route::post('/crear', 'AuthController@create');
+	Route::post('/autenticar', 'AuthController@auth');
+	Route::get('/cerrar-sesion', 'AuthController@logout');
+});
+// Escritorio
+Route::prefix('escritorio')->middleware('user.status')->group(function() {
+	// Index
+	Route::get('/', 'DashboardController@index')->name('escritorio');
+	// Usuarios
+	Route::prefix('usuarios')->group(function() {
+		Route::get('/', 'DashboardController@users')->name('escritorio/usuarios');
+		Route::get('/editar/{id}', 'DashboardController@users_edit')->name('escritorio/editar');
+		Route::get('/actualizar/{id}', 'DashboardController@users_update');
+	});
+	// Usuario
+	Route::get('/usuario/{id}', 'DashboardController@user');
+	Route::post('/usuario/actualizar/{id}', 'DashboardController@user_update');
+	// Home
+	Route::get('/cabeceras/{id}', 'DashboardController@headers')->name('escritorio/cabeceras');
+	Route::post('/cabeceras/actualizar/{id}', 'DashboardController@headers_update');
+	Route::get('/descanso-1/{id}', 'DashboardController@break1')->name('escritorio/descanso-1');
+	Route::post('/descanso-1/actualizar/{id}', 'DashboardController@break1_update');
+	Route::get('/descanso-2/{id}', 'DashboardController@break2')->name('escritorio/descanso-2');
+	Route::post('/descanso-2/actualizar/{id}', 'DashboardController@break2_update');
+	Route::get('/descanso-3/{id}', 'DashboardController@break3')->name('escritorio/descanso-3');
+	Route::post('/descanso-3/actualizar/{id}', 'DashboardController@break3_update');
+	// Artículos
+	Route::prefix('articulos')->group(function() {
+		Route::get('/', 'DashboardController@articles')->name('escritorio/articulos');
+		Route::get('/crear', 'DashboardController@articles_create')->name('escritorio/articulos/crear');
+		Route::post('/almacenar', 'DashboardController@articles_store');
+		Route::get('/editar/{id}', 'DashboardController@articles_edit')->name('escritorio/articulos/editar');
+		Route::post('/actualizar/{id}', 'DashboardController@articles_update');
+	});
+	// Paquetes
+	Route::prefix('paquetes')->group(function() {
+		Route::get('/', 'DashboardController@packs')->name('escritorio/paquetes');
+		Route::get('/crear', 'DashboardController@packs_create')->name('escritorio/paquetes/crear');
+		Route::post('/almacenar', 'DashboardController@packs_store');
+		Route::get('/editar/{id}', 'DashboardController@packs_edit');
+		Route::post('/actualizar/{id}', 'DashboardController@packs_update');
+		// Servicios
+		Route::get('/servicio/{id}', 'DashboardController@packs_services')->name('escritorio/paquetes/servicio');
+		Route::get('/servicio/crear/{id}', 'DashboardController@packs_services_create')->name('escritorio/paquetes/servicio/crear');
+		Route::post('/servicio/almacenar', 'DashboardController@packs_services_store');
+		Route::get('/servicio/editar/{id}', 'DashboardController@packs_services_edit');
+		Route::post('/servicio/actualizar/{id}', 'DashboardController@packs_services_update');
+		// Requerimientos
+		Route::get('/requerimiento/{id}', 'DashboardController@packs_requirements');
+		Route::get('/requerimiento/crear/{id}', 'DashboardController@packs_requirements_create');
+		Route::post('/requerimiento/almacenar', 'DashboardController@packs_requirements_store');
+		Route::get('/requerimiento/editar/{id}', 'DashboardController@packs_requirements_edit');
+		Route::post('/requerimiento/actualizar/{id}', 'DashboardController@packs_requirements_update');
+	});
+	// Servicios
+	Route::prefix('servicios')->group(function() {
+		Route::get('/', 'DashboardController@services')->name('escritorio/servicios');
+		Route::get('/crear', 'DashboardController@services_create')->name('escritorio/servicios/crear');
+		Route::post('/almacenar', 'DashboardController@services_store');
+		Route::get('/editar/{id}', 'DashboardController@services_edit');
+		Route::post('/actualizar/{id}', 'DashboardController@services_update');
+		// Servicios
+		Route::get('/servicio/{id}', 'DashboardController@services_services');
+		Route::get('/servicio/crear/{id}', 'DashboardController@services_services_create');
+		Route::post('/servicio/almacenar', 'DashboardController@services_services_store');
+		Route::get('/servicio/editar/{id}', 'DashboardController@services_services_edit');
+		Route::post('/servicio/actualizar/{id}', 'DashboardController@services_services_update');
+		// Requerimientos
+		Route::get('/requerimiento/{id}', 'DashboardController@services_requirements');
+		Route::get('/requerimiento/crear/{id}', 'DashboardController@services_requirements_create');
+		Route::post('/requerimiento/almacenar', 'DashboardController@services_requirements_store');
+		Route::get('/requerimiento/editar/{id}', 'DashboardController@services_requirements_edit');
+		Route::post('/requerimiento/actualizar/{id}', 'DashboardController@services_requirements_update');
+	});
+});
